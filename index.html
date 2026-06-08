@@ -257,7 +257,6 @@
     }
     button[type="submit"]:active { transform: scale(0.97); }
 
-    /* ОРТАҒА ТУРАЛАУ (ЦЕНТРИРОВАНИЕ ФУТЕРА) */
     .footer { padding-bottom: 70px; font-size: 14px; color: var(--muted); text-align: center; width: 100%; }
     .footer-text { font-size: 16px; color: var(--accent-dark); margin-bottom: 15px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; text-align: center; }
     .footer-names { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 700; font-size: 46px; color: #8E7343; margin-bottom: 5px; filter: drop-shadow(0 2px 4px rgba(197,160,89,0.2)); text-align: center; }
@@ -387,15 +386,24 @@
       <div class="section-number">04</div>
       <div class="small-title">Тойға келетініңізді растаңыз</div>
       <p class="muted">Сіздерді асыға күтеміз!</p>
-      <form action="https://formspree.io/f/your_id" method="POST">
-        <input type="text" name="name" placeholder="Сіздің есіміңіз" required>
-        <select name="status" required>
+      
+      <form action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="f33a55d7-91d8-4891-b29c-5c47c49433a4">
+        
+        <input type="hidden" name="subject" value="Жаңа жауап: Темірлан & Балнұр Той">
+        <input type="hidden" name="from_name" value="Той Шақыру">
+
+        <input type="text" name="Қонақтың есімі (Имя)" placeholder="Сіздің есіміңіз" required>
+        
+        <select name="Тойға қатысу статусы (Ответ)" required>
           <option value="" disabled selected>Тойға келесіз бе?</option>
-          <option value="yes">Жұбайыммен келемін</option>
-          <option value="alone">Өзім келемін</option>
-          <option value="no">Келе алмаймын</option>
+          <option value="Жұбайыммен келемін (Приду с супругой)">Жұбайыммен келемін</option>
+          <option value="Өзім келемін (Приду один/одна)">Өзім келемін</option>
+          <option value="Келе алмаймын (Не смогу прийти)">Келе алмаймын</option>
         </select>
-        <textarea name="wishes" placeholder="Жас жұбайларға ақ тілек немесе ескерту!"></textarea>
+        
+        <textarea name="Ақ тілек / Ескерту (Пожелание)" placeholder="Жас жұбайларға ақ тілек немесе ескерту!"></textarea>
+        
         <button type="submit">Жіберу</button>
       </form>
     </section>
